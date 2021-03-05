@@ -1,0 +1,28 @@
+
+## JSP Extra Exercises
+
+Create a branch named "jsp-practice" off of the "jsp-and-jstl-solution" tag and pair up to do the following:
+
+#### Color Page
+
+A user goes to a url "/pickcolor.jsp". On the "pickcolor.jsp" page, the user is prompted to enter their favorite color. Upon clicking submit, they are redirected to a page with a background color of their favorite color.
+
+- use a POST request on the form
+- use two JSPs
+- use style tags
+
+#### Create a Pizza Order Form and Order Summary Page
+
+A user goes to "/pizza-order.jsp" and sees a pizza order form. This form features choices to select the crust type, sauce type, size type (use select inputs), toppings (checkboxes), and delivery address (text input). After submitting the form, the user sees their order displayed at the page "/display-order.jsp". If the form is submitted with blank fields, the user is redirected back to the "/pizza-order.jsp" and an error message is displayed to the user that explains that no form fields can be blank. It is ok if all form fields are emptied out when redirecting back to the form after submitting an incomplete form. Is there a way to save the user choices when redirecting back to the form?
+
+- use a POST request on the form
+- use two JSPs.
+- don't worry about styling.
+
+#### Guessing Game
+
+A user goes to "/guess.jsp" and is prompted to guess a number between 1 and 100. The user will be taken to another page and if the answer is correct, a message will be displayed indicating the win; otherwise a higher or lower message will be given with a link to the form to guess again.
+
+- use a POST request on the form
+- use two jsps
+- use an instance field on one of the JSPs
