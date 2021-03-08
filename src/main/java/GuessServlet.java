@@ -14,10 +14,21 @@ public class GuessServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        int number =  request.getParameter("number");
+        int number = Integer.parseInt(request.getParameter("number"));
+        int correct = 2;
 //        response.getWriter().println("<h1>Great choice, picking" + color + ", let's see it!</h1>");
 //        response.sendRedirect("/viewcolor?color=" + color + "");
-        response.sendRedirect("/viewcolor");
-
+        if (number < 1 | number > 3) {
+            response.sendRedirect("/viewcolor");
+        }
+        else if (number == 1) {
+            response.sendRedirect("/incorrect");
+        }
+        else if (number == 2) {
+            response.sendRedirect("/correct");
+        }
+        else if (number == 3) {
+            response.sendRedirect("/incorrect");
+        }
     }
 }
