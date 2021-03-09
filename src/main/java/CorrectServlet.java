@@ -10,7 +10,8 @@ public class CorrectServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 String number = request.getParameter("number");
-request.setAttribute("number", number);
+        System.out.println(number);
+        request.setAttribute("number", number);
         request.getRequestDispatcher("correct.jsp").forward(request, response);
     }
 }

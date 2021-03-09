@@ -14,7 +14,8 @@
 <p>Pick a number, any number, you see?</p>
 <h4>(as long as that number is between 1 and 3)</h4>
 <form action="/guess" method="post">
-    <input type="number">
+    <input type="number" name="number">
+    <button>Submit</button>
 </form>
 
 </body>

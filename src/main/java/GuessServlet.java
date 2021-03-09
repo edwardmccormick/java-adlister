@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Random;
 
 @WebServlet(name = "GuessServlet", urlPatterns = "/guess")
 public class GuessServlet extends HttpServlet {
@@ -15,20 +16,17 @@ public class GuessServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int number = Integer.parseInt(request.getParameter("number"));
-        int correct = 2;
-//        response.getWriter().println("<h1>Great choice, picking" + color + ", let's see it!</h1>");
-//        response.sendRedirect("/viewcolor?color=" + color + "");
+         Random ran = new Random();
+        int correct = ran.nextInt(3)+1;
         if (number < 1 | number > 3) {
-            response.sendRedirect("/viewcolor");
+            response.sendRedirect("/guess");
         }
-        else if (number == 1) {
-            response.sendRedirect("/incorrect");
+        else if (number != correct) {
+            response.sendRedirect("/incorrect?number="+number+"&correct="+correct);
         }
-        else if (number == 2) {
-            response.sendRedirect("/correct");
+        else if (number == correct) {
+            response.sendRedirect("/correct?number="+number+"&correct="+correct);
         }
-        else if (number == 3) {
-            response.sendRedirect("/incorrect");
-        }
+
     }
 }
