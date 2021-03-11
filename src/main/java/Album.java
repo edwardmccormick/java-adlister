@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Albums implements Serializable {
+public class Album implements Serializable {
     private int id;
     private String artist;
     private String name;
@@ -8,7 +8,7 @@ public class Albums implements Serializable {
     private Float sales;
     private String genre;
 
-    public Albums(int id, String artist, String name, int releaseDate, Float sales, String genre) {
+    public Album(int id, String artist, String name, int releaseDate, Float sales, String genre) {
         this.id = id;
         this.artist = artist;
         this.name = name;
@@ -17,7 +17,7 @@ public class Albums implements Serializable {
         this.genre = genre;
     }
 
-    public Albums() {}
+    public Album() {}
 
 //    id — auto-incrementing unsigned integer primary key
 //    artist — string for storing the recording artist name

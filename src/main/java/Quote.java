@@ -1,48 +1,30 @@
 import java.io.Serializable;
 
-public class Quotes implements Serializable {
+public class Quote implements Serializable {
     private int id;
-    private String authorFirstName;
-    private String authorLastName;
+    private Author Author;
     private String content;
 
 
-    public Quotes() {
+    public Quote() {
     }
 
-    public Quotes(int id, String AuthorFirstName, String AuthorLastName, String Content){
+    public Quote(int id, Author Author, String Content){
         this.id = id;
-        this.authorFirstName = AuthorFirstName;
-        this.authorLastName = AuthorLastName;
+        this.Author = Author;
         this.content = content;
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getAuthorFirstName() {
-        return authorFirstName;
-    }
-
-    public void setAuthorFirstName(String authorFirstName) {
-        this.authorFirstName = authorFirstName;
-    }
-
-    public String getAuthorLastName() {
-        return authorLastName;
-    }
-
-    public void setAuthorLastName(String authorLastName) {
-        this.authorLastName = authorLastName;
-    }
-
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     public void setContent(String content) {
