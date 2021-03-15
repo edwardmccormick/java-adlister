@@ -42,7 +42,8 @@ public class MySQLAdsDao implements Ads {
     public Long insert(Ad ad) {
         try {
             Statement stmt = connection.createStatement();
-            stmt.executeUpdate(createInsertQuery(ad), Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement queryString = connection.prepareStatement(createInsertQuery(ad));
+            stmt.executeUpdate(queryString.toString(), Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getLong(1);
@@ -60,7 +61,7 @@ public class MySQLAdsDao implements Ads {
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
+            rs.getLong("ads_id"),
             rs.getLong("user_id"),
             rs.getString("title"),
             rs.getString("description")
